@@ -559,6 +559,166 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Contact Form Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-black via-gray-900 to-black">
+        <div className="container mx-auto">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold mb-4">Get Your Free Quote Today</h2>
+              <p className="text-xl text-gray-300">
+                Ready to transform your vehicle? Fill out the form below and we'll get back to you with a personalized
+                quote.
+              </p>
+            </div>
+
+            <Card className="bg-white/5 backdrop-blur-md border border-white/20 shadow-2xl shadow-green-500/20">
+              <CardContent className="p-8">
+                <form className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium mb-2 text-white">Full Name *</label>
+                      <Input
+                        placeholder="Enter your full name"
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2 text-white">Phone Number *</label>
+                      <Input
+                        placeholder="(417) 555-0123"
+                        type="tel"
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2 text-white">Email Address</label>
+                      <Input
+                        placeholder="your.email@example.com"
+                        type="email"
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2 text-white">Vehicle Make & Model</label>
+                      <Input
+                        placeholder="e.g., 2020 Honda Civic"
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium mb-2 text-white">Service Needed *</label>
+                      <select
+                        className="bg-white/10 border border-white/20 text-white p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-white/30"
+                        required
+                      >
+                        <option value="" className="bg-gray-800 text-white">
+                          Select Service
+                        </option>
+                        <option value="paint-correction" className="bg-gray-800 text-white">
+                          Paint Correction
+                        </option>
+                        <option value="ceramic-coating" className="bg-gray-800 text-white">
+                          Ceramic Coating
+                        </option>
+                        <option value="interior-detailing" className="bg-gray-800 text-white">
+                          Interior Detailing
+                        </option>
+                        <option value="exterior-detailing" className="bg-gray-800 text-white">
+                          Exterior Detailing
+                        </option>
+                        <option value="headlight-restoration" className="bg-gray-800 text-white">
+                          Headlight Restoration
+                        </option>
+                        <option value="scratch-repair" className="bg-gray-800 text-white">
+                          Scratch Repair
+                        </option>
+                        <option value="full-package" className="bg-gray-800 text-white">
+                          Full Detail Package
+                        </option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2 text-white">Preferred Date</label>
+                      <Input type="date" className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2 text-white">Location Preference</label>
+                      <select className="bg-white/10 border border-white/20 text-white p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-white/30">
+                        <option value="" className="bg-gray-800 text-white">
+                          Select Location
+                        </option>
+                        <option value="mobile" className="bg-gray-800 text-white">
+                          Mobile Service (My Location)
+                        </option>
+                        <option value="shop" className="bg-gray-800 text-white">
+                          Drop-off at Shop
+                        </option>
+                        <option value="discuss" className="bg-gray-800 text-white">
+                          Let's Discuss
+                        </option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2 text-white">Additional Details</label>
+                      <textarea
+                        placeholder="Tell us about your vehicle's condition, specific concerns, or any special requests..."
+                        rows={3}
+                        className="bg-white/10 border border-white/20 text-white placeholder:text-gray-400 p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-white/30 resize-none"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="md:col-span-2 pt-4">
+                    <Button
+                      type="submit"
+                      className="w-full bg-white text-black hover:bg-gray-200 text-lg py-3 shadow-lg shadow-green-500/25"
+                    >
+                      <Mail className="w-5 h-5 mr-2" />
+                      Send My Quote Request
+                    </Button>
+                    <p className="text-center text-sm text-gray-400 mt-4">
+                      We'll respond within 24 hours with your personalized quote and availability.
+                    </p>
+                  </div>
+                </form>
+              </CardContent>
+            </Card>
+
+            <div className="grid md:grid-cols-3 gap-6 mt-12">
+              <div className="text-center">
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6">
+                  <Phone className="w-8 h-8 mx-auto mb-3 text-green-400" />
+                  <h4 className="font-semibold mb-2">Call Us Now</h4>
+                  <p className="text-gray-400 text-sm mb-2">417-501-9065</p>
+                  <p className="text-gray-400 text-sm">940-337-2930</p>
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6">
+                  <MessageCircle className="w-8 h-8 mx-auto mb-3 text-green-400" />
+                  <h4 className="font-semibold mb-2">WhatsApp</h4>
+                  <p className="text-gray-400 text-sm">Quick responses</p>
+                  <p className="text-gray-400 text-sm">Send photos easily</p>
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6">
+                  <Mail className="w-8 h-8 mx-auto mb-3 text-green-400" />
+                  <h4 className="font-semibold mb-2">Email Us</h4>
+                  <p className="text-gray-400 text-sm">auto.detailmo@gmail.com</p>
+                  <p className="text-gray-400 text-sm">Detailed quotes</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <footer id="contact" className="bg-black border-t border-gray-800 py-16 px-4">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
