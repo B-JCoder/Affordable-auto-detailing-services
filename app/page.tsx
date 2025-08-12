@@ -32,6 +32,20 @@ export default function Home() {
     setOpenFaq(openFaq === index ? null : index)
   }
 
+  const handleCall = () => {
+    window.location.href = "tel:+14175019065"
+  }
+
+  const handleGetQuote = () => {
+    const element = document.getElementById("contact")
+    element?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  const handleBookNow = () => {
+    const element = document.getElementById("contact")
+    element?.scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
     <div className="min-h-screen bg-black text-white">
       {/* WhatsApp Floating Button */}
@@ -89,7 +103,9 @@ export default function Home() {
             <a href="#contact" className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base">
               Contact
             </a>
-            <Button className="bg-white text-black hover:bg-gray-200 text-sm lg:text-base">Book Now</Button>
+            <Button onClick={handleBookNow} className="bg-white text-black hover:bg-gray-200 text-sm lg:text-base">
+              Book Now
+            </Button>
           </nav>
         </div>
 
@@ -131,7 +147,15 @@ export default function Home() {
               >
                 Contact
               </a>
-              <Button className="bg-white text-black hover:bg-gray-200 w-full mt-4">Book Now</Button>
+              <Button
+                onClick={() => {
+                  handleBookNow()
+                  setIsMenuOpen(false)
+                }}
+                className="bg-white text-black hover:bg-gray-200 w-full mt-4"
+              >
+                Book Now
+              </Button>
             </nav>
           </div>
         )}
@@ -152,11 +176,12 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-200">
+                <Button onClick={handleCall} size="lg" className="bg-white text-black hover:bg-gray-200">
                   <Phone className="w-5 h-5 mr-2" />
                   Call 417-501-9065
                 </Button>
                 <Button
+                  onClick={handleGetQuote}
                   size="lg"
                   variant="outline"
                   className="border-gray-600 text-white hover:bg-white/10 bg-transparent"
@@ -195,14 +220,30 @@ export default function Home() {
                   </div>
 
                   <form className="space-y-4">
-                    <Input placeholder="Your Name" className="bg-white/10 border-white/20 text-white" />
-                    <Input placeholder="Phone Number" className="bg-white/10 border-white/20 text-white" />
-                    <select className="bg-white/10 border-white/20 text-white p-3 rounded-lg w-full">
-                      <option value="">Select Service</option>
-                      <option value="paint-correction">Paint Correction</option>
-                      <option value="ceramic-coating">Ceramic Coating</option>
-                      <option value="interior-detailing">Interior Detailing</option>
-                      <option value="exterior-detailing">Exterior Detailing</option>
+                    <Input
+                      placeholder="Your Name"
+                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                    />
+                    <Input
+                      placeholder="Phone Number"
+                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                    />
+                    <select className="bg-white/10 border border-white/20 text-white p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-white/30">
+                      <option value="" className="bg-gray-800 text-white">
+                        Select Service
+                      </option>
+                      <option value="paint-correction" className="bg-gray-800 text-white">
+                        Paint Correction
+                      </option>
+                      <option value="ceramic-coating" className="bg-gray-800 text-white">
+                        Ceramic Coating
+                      </option>
+                      <option value="interior-detailing" className="bg-gray-800 text-white">
+                        Interior Detailing
+                      </option>
+                      <option value="exterior-detailing" className="bg-gray-800 text-white">
+                        Exterior Detailing
+                      </option>
                     </select>
                     <Button className="w-full bg-white text-black hover:bg-gray-200">Request Quote</Button>
                   </form>
@@ -228,16 +269,16 @@ export default function Home() {
                 best.
               </p>
 
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="text-center">
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4">
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 h-full flex flex-col items-center justify-center min-h-[120px]">
                     <Clock className="w-8 h-8 mx-auto mb-2" />
                     <h4 className="font-semibold">Always Open</h4>
                     <p className="text-sm text-gray-400">Flexible scheduling</p>
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4">
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 h-full flex flex-col items-center justify-center min-h-[120px]">
                     <Award className="w-8 h-8 mx-auto mb-2" />
                     <h4 className="font-semibold">Quality Guaranteed</h4>
                     <p className="text-sm text-gray-400">Premium results</p>
